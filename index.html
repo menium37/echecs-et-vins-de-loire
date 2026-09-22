@@ -4,307 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Échecs & Vins du Val de Loire — 1er Challenge</title>
-    <style>
-        :root {
-            --primary-color: #800020; /* Bordeaux Vin */
-            --secondary-color: #d4af37; /* Or / Doré */
-            --dark-color: #2c3e50;
-            --light-color: #fcfbfa;
-            --text-color: #333333;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--light-color);
-        }
-
-        header {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('assets/affiche.jpg') center/cover no-repeat;
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .header-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .logos-zone {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 3rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .logos-zone img {
-            height: 90px;
-            width: auto;
-            object-fit: contain;
-            filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.3));
-        }
-
-        .organizer-lead {
-            font-size: 1.25rem;
-            font-weight: 300;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .event-meta {
-            display: inline-block;
-            background-color: rgba(128, 0, 32, 0.8);
-            border: 1px solid var(--secondary-color);
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            font-size: 1.1rem;
-        }
-
-        nav {
-            background-color: var(--primary-color);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            padding: 1rem 1.5rem;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-
-        nav a:hover {
-            background-color: rgba(214, 175, 55, 0.2);
-            color: var(--secondary-color);
-        }
-
-        main {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-        }
-
-        section {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-        }
-
-        .grid-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .stat-card {
-            background-color: #fefcf9;
-            border-left: 4px solid var(--primary-color);
-            padding: 1rem;
-            border-radius: 0 4px 4px 0;
-            text-align: center;
-        }
-
-        .stat-card strong {
-            display: block;
-            font-size: 1.4rem;
-            color: var(--primary-color);
-        }
-
-        .timeline {
-            margin-top: 1rem;
-        }
-
-        .timeline-item {
-            border-left: 2px solid var(--secondary-color);
-            padding-left: 1.5rem;
-            position: relative;
-            padding-bottom: 1.5rem;
-        }
-
-        .timeline-item::before {
-            content: '';
-            width: 12px;
-            height: 12px;
-            background-color: var(--primary-color);
-            border-radius: 50%;
-            position: absolute;
-            left: -7px;
-            top: 6px;
-        }
-
-        .time-badge {
-            color: var(--primary-color);
-            font-weight: bold;
-            font-size: 0.95rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            padding: 0.8rem 1.8rem;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: background 0.3s;
-            margin-top: 1rem;
-            border: 1px solid transparent;
-        }
-
-        .btn:hover {
-            background-color: white;
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .logos-zone { gap: 1.5rem; }
-            .logos-zone img { height: 60px; }
-            section { padding: 1.5rem; }
-        }
-    </style>
 </head>
 <body>
 
-    <header id="accueil">
-        <div class="header-container">
-            <!-- Zone des logos officiels -->
-            <div class="logos-zone">
-                <img src="assets/logo-club-avoine.png" alt="Logo Club d’échecs d'Avoine">
-                <img src="assets/logo-auberge-rois.png" alt="Logo L'Auberge des Rois">
-            </div>
-
-            <!-- Texte d'annonce mis à jour -->
-            <p class="organizer-lead">Le club d’échecs d'Avoine en association avec L'Auberge des Rois de Chinon organise :</p>
-            <h1>1er Challenge Échecs & Vins du Val de Loire</h1>
-            
-            <div class="event-meta">
-                📅 10 & 11 avril 2027 &nbsp;|&nbsp; 📍 Chinon (37)
-            </div>
+    <header>
+        <!-- Logos des organisateurs -->
+        <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 15px;">
+            <img src="assets/logo-club-avoine.png" alt="Logo Club d’échecs d'Avoine" style="height: 60px;">
+            <img src="assets/logo-auberge-rois.png" alt="Logo L'Auberge des Rois" style="height: 60px;">
         </div>
+
+        <p>Le club d’échecs d'avoine en association avec "L'Auberge des Rois" de Chinon organise :</p>
+        <h1>1er Challenge Échecs et Vins du Val de Loire</h1>
+        <p>Un rendez-vous inédit à Chinon mêlant compétition d'échecs, convivialité et découverte des vins de Loire.</p>
+        <p><strong>10 & 11 avril 2027</strong> · Chinon · 37 · 40 participants maximum</p>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#accueil">Accueil</a></li>
-            <li><a href="#esprit">L'Esprit</a></li>
-            <li><a href="#programme">Le Programme</a></li>
-            <li><a href="#lieu">Le Lieu</a></li>
-            <li><a href="#inscription">S'inscrire</a></li>
-        </ul>
-    </nav>
-
     <main>
-        <section id="esprit">
-            <h2>Deux passions. Un même échiquier.</h2>
-            <p>Un rendez-vous inédit à Chinon mêlant compétition d'échecs, convivialité et découverte des vins de Loire. Cette manifestation unique en son genre est ouverte aux Seniors+ et aux vétérans de plus de 50 ans.</p>
-            
-            <div class="grid-stats">
-                <div class="stat-card">
-                    <strong>9 rondes</strong> au total
-                </div>
-                <div class="stat-card">
-                    <strong>15 min + 5 s</strong> par joueur
-                </div>
-                <div class="stat-card">
-                    <strong>Homologué</strong> FIDE Elo Rapide
-                </div>
-                <div class="stat-card">
-                    <strong>40</strong> participants max.
-                </div>
-            </div>
+        <section>
+            <h2>L'esprit du rendez-vous</h2>
+            <h3>Deux passions. Un même échiquier.</h3>
+            <p>Cette manifestation unique en son genre est ouverte aux Seniors+ et aux vétérans de plus de 50 ans. Pour cette première édition, le nombre de participants est limité à 40 afin de préserver une organisation conviviale.</p>
+            <ul>
+                <li><strong>9 parties</strong> au total</li>
+                <li><strong>15 + 5 minutes</strong> par joueur</li>
+                <li><strong>FIDE</strong> tournoi homologué Elo</li>
+            </ul>
         </section>
 
-        <section id="programme">
+        <section>
             <h2>Le programme</h2>
-            <p style="margin-bottom: 1.5rem; font-style: italic;">Les détails complémentaires seront ajoutés au fur et à mesure.</p>
+            <p>Les informations actuellement disponibles sont affichées ci-dessous. Les détails complémentaires pourront être ajoutés au fur et à mesure.</p>
             
-            <div class="timeline">
-                <div class="timeline-item">
-                    <span class="time-badge">Samedi 10 avril · 13h30 — 14h15</span>
-                    <h3>Pointage</h3>
-                    <p>Accueil des participants et vérification des inscriptions.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="time-badge">Samedi 10 avril · 14h30</span>
-                    <h3>Cérémonie d'ouverture</h3>
-                    <p>Lancement officiel du challenge.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="time-badge">Samedi 10 avril · Après-midi</span>
-                    <h3>5 parties</h3>
-                    <p>Tournoi rapide — 5 premières rondes.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="time-badge">Dimanche 11 avril · Journée</span>
-                    <h3>4 parties & Clôture</h3>
-                    <p>Suite des 4 dernières rondes et conclusion du tournoi.</p>
-                </div>
-            </div>
+            <h4>Samedi 10 avril</h4>
+            <p><strong>13h30 — 14h15 : Pointage</strong><br>Accueil des participants et vérification des inscriptions.</p>
+            <p><strong>14h30 : Cérémonie d'ouverture</strong><br>Lancement officiel du challenge.</p>
+            <p><strong>5 parties</strong><br>Tournoi rapide — cadence 15 min + 5 s par joueur. 5 rondes.</p>
+
+            <h4>Dimanche 11 avril</h4>
+            <p><strong>4 parties</strong><br>Suite et conclusion du tournoi. 4 rondes.</p>
         </section>
 
-        <section id="lieu">
+        <section>
             <h2>Rendez-vous à Chinon</h2>
-            <h3>L'Auberge des Rois — Hôtel Restaurant</h3>
-            <p style="margin: 0.5rem 0 1rem 0;">
-                📍 10 Place Jeanne d'Arc, 37500 Chinon<br>
-                📞 Contact : +33 2 47 81 20 20
-            </p>
-            <p>Un cadre chaleureux et historique idéal pour partager des moments conviviaux entre passionnés autour de l'échiquier et des terroirs de la Loire.</p>
+            <h3>L'Auberge des Rois Hôtel Restaurant</h3>
+            <p>10 Place Jeanne d'Arc<br>37500 Chinon</p>
+            <p>Contact : <strong>+33 2 47 81 20 20</strong></p>
         </section>
 
-        <section id="inscription">
-            <h2>Inscriptions avant le 31 mars 2027</h2>
-            <p>Pour cette première édition, le nombre de places est strictement limité à <strong>40 participants</strong> afin de préserver une organisation exclusive et conviviale.</p>
+        <section>
+            <h2>Inscriptions</h2>
+            <h3>Rendez-vous avant le 31 mars 2027.</h3>
+            <p>Les inscriptions seront closes le 31 mars 2027. Cette première édition est limitée à 40 participants. Les modalités détaillées d'inscription seront ajoutées ici dès que tu me les transmettras.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>40</strong> participants maximum</p>
+        <p><strong>Échecs & Vins du Val de Loire</strong></p>
+        <p>1er Challenge · 10 & 11 avril 2027 · Chinon</p>
+        <p><em>Site en construction — informations à venir</em></p>
+    </footer>
+
+</body>
+</html>
