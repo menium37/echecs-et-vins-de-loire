@@ -4,6 +4,268 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Échecs & Vins du Val de Loire — 1er Challenge</title>
+    <style>
+        :root {
+            --primary: #1A365D;
+            --secondary: #2C3E50;
+            --accent: #E67E22;
+            --light: #F8F9FA;
+            --dark: #2C3E50;
+            --border: #E2E8F0;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .brand {
+            font-weight: bold;
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: var(--accent);
+        }
+        
+        .logos-header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 2rem;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            border-top: 1px solid var(--border);
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        #hero {
+            text-align: center;
+            padding: 6rem 0;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin: 1rem 0;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+        
+        .date-location {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 1.5rem 0;
+        }
+        
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+        
+        .btn:hover {
+            background-color: #122542;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--light);
+        }
+        
+        .phases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .phase {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .event {
+            display: grid;
+            grid-template-columns: 150px 100px 1fr;
+            gap: 1.5rem;
+            align-items: start;
+        }
+        
+        .day {
+            font-weight: bold;
+        }
+        
+        .time {
+            color: #666;
+        }
+        
+        .details {
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .tag {
+            display: inline-block;
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background-color: #E2E8F0;
+            padding: 0.25rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        address {
+            font-style: normal;
+            margin-bottom: 1rem;
+            white-space: pre-line;
+        }
+        
+        .vignerons-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .vigneron {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .limit {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        footer {
+            background-color: var(--light);
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .status {
+            color: #666;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.25rem; }
+            .event {
+                grid-template-columns: 1fr;
+                gap: 0.25rem;
+            }
+            .details { margin-top: 0.5rem; }
+            .tag { position: static; display: inline-block; margin-top: 1rem; }
+            nav { flex-direction: column; }
+            nav ul { flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -18,8 +280,8 @@
             </ul>
         </nav>
         <div class="logos-header">
-            <!-- Logo Club d'échecs d'Avoine -->
-            <!-- Logo L'Auberge des Rois -->
+            Logo Club d'échecs d'Avoine
+            Logo L'Auberge des Rois
         </div>
     </header>
 
@@ -27,7 +289,7 @@
         <section id="hero">
             <p>Le club d'échecs d'Avoine, en association avec l'Auberge des Rois de Chinon propose :</p>
             <h1>1<sup>er</sup> Challenge Échecs & Vins du Val de Loire</h1>
-            <p>Un rendez-vous inédit à Chinon mêlant compétition d'échecs, convivualité et découverte des vins de Loire.</p>
+            <p>Un rendez-vous inédit à Chinon mêlant compétition d'échecs, convivialité et découverte des vins de Loire.</p>
             <p class="date-location">10 & 11 avril 2027 Chinon (37)</p>
             <div class="actions">
                 <a href="#inscrire" class="btn">S'inscrire</a>
@@ -78,68 +340,3 @@
                 <div class="event">
                     <span class="day">Samedi 10 avril</span>
                     <span class="time">19h-minuit</span>
-                    <div class="details">
-                        <h3>Début de la dégustation et du repas</h3>
-                        <p>Les 9 épreuves du tournoi de dégustation se déroulent pendant le dîner.</p>
-                        <span class="tag">Dégustation</span>
-                    </div>
-                </div>
-                <div class="event">
-                    <span class="day">Dimanche 11 avril</span>
-                    <span class="time">Journée</span>
-                    <div class="details">
-                        <h3>4 parties & clôture</h3>
-                        <p>Suite des rencontres et conclusion du tournoi.</p>
-                        <span class="tag">Échecs</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="lieu">
-            <p class="subtitle">Rendez-vous à Chinon</p>
-            <h2>L'Auberge des Rois Hôtel Restaurant</h2>
-            <address>
-                10 Place Jeanne d'Arc<br>
-                37500 Chinon<br>
-                Contact : +33 2 47 81 20 20
-            </address>
-            <p>Un cadre chaleureux et historique pour partager des moments conviviaux entre passionnés d'échecs et de terroirs de la Loire.</p>
-        </section>
-
-        <section id="vignerons">
-            <p class="subtitle">À la rencontre des terroirs</p>
-            <h2>Les Vignerons partenaires</h2>
-            <p>Découvrez les vignerons qui accompagnent le 1<sup>er</sup> Challenge Échecs & Vins du Val de Loire.</p>
-            
-            <div class="vignerons-list">
-                <div class="vigneron">
-                    <!-- Logo AB -->
-                    <strong>Chai de Tihème</strong>
-                </div>
-                <div class="vigneron">
-                    <!-- Logo AB -->
-                    <strong>Domaine de la Bergerie</strong>
-                </div>
-                <div class="vigneron">
-                    <strong>Louis de Grenelle</strong>
-                </div>
-            </div>
-        </section>
-
-        <section id="inscrire">
-            <p class="subtitle">Inscriptions</p>
-            <h2>Avant le 31 mars 2027.</h2>
-            <p>Pour cette première édition, le nombre de places est strictement limité afin de préserver une organisation exclusive et conviviale.</p>
-            <a href="mailto:contact@example.com" class="btn">Nous contacter</a>
-            <p class="limit"><strong>40</strong> participants maximum</p>
-        </section>
-    </main>
-
-    <footer>
-        <p><strong>Échecs & Vins du Val de Loire</strong></p>
-        <p>1<sup>er</sup> Challenge · 10 & 11 avril 2027 · Chinon</p>
-        <p class="status">Site en construction — informations à venir</p>
-    </footer>
-</body>
-</html>
