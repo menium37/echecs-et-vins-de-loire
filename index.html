@@ -4,168 +4,148 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Echecs & Vins du Val de Loire</title>
+    <!-- Tailwind CSS pour un design rapide et moderne -->
+    <script src="https://jsdelivr.net"></script>
+    <!-- FontAwesome pour les icônes -->
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
+        @import url('https://googleapis.com');
+        
         :root {
-            --burgundy: #6b1d2f;
-            --gold: #d4af37;
-            --dark-slate: #1e293b;
-            --light-bg: #f8fafc;
-            --card-bg: #ffffff;
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
         }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--light-bg);
-            color: var(--dark-slate);
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        header {
-            background-color: var(--burgundy);
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            letter-spacing: 1px;
-        }
-
-        header p {
-            margin: 5px 0 0;
-            font-size: 1.2em;
-            color: var(--gold);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .intro {
-            text-align: center;
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin-bottom: 40px;
-        }
-
-        .intro h2 {
-            color: var(--burgundy);
-            margin-top: 0;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            padding: 25px;
-            transition: transform 0.3s ease;
-            border-top: 5px solid var(--burgundy);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            color: var(--burgundy);
-            margin-top: 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .card h3 i {
-            color: var(--gold);
-        }
-
-        .card p {
-            line-height: 1.6;
-            color: #475569;
-        }
-
-        .poster-container {
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .poster-container h2 {
-            color: var(--burgundy);
-            margin-bottom: 20px;
-        }
-
-        .poster {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            max-height: 600px;
-        }
-
-        footer {
-            background-color: var(--dark-slate);
-            color: #94a3b8;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 60px;
-            font-size: 0.9em;
-        }
+        
+        .font-serif { font-family: var(--font-serif); }
+        .font-sans { font-family: var(--font-sans); }
     </style>
 </head>
-<body>
+<body class="font-sans bg-[#fbfaf7] text-stone-800 selection:bg-red-100 selection:text-red-900">
 
-    <header>
-        <h1>1<sup>er</sup> Challenge Échecs & Vins du Val de Loire</h1>
-        <p>10 & 11 Avril 2027 - Chinon (37)</p>
+    <!-- Hero Section / Header -->
+    <header class="relative bg-stone-900 text-white overflow-hidden border-b-4 border-[#80182c]">
+        <!-- Grain overlay pour texture -->
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 py-20 md:py-28 relative z-10 flex flex-col items-center text-center">
+            <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold uppercase tracking-wider text-red-300 mb-6">
+                <span class="flex h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
+                Événement Exclusif · Chinon 2027
+            </div>
+            
+            <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight max-w-4xl mx-auto leading-tight mb-6">
+                1<sup>er</sup> Challenge Échecs & Vins <br class="hidden md:block">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-amber-300 to-red-400">du Val de Loire</span>
+            </h1>
+            
+            <p class="text-stone-300 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed mb-8">
+                Une rencontre inédite entre la rigueur de la stratégie et la poésie des terroirs ligériens.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-6 text-sm font-medium text-stone-300">
+                <div class="flex items-center gap-2 px-3 py-1 rounded-md bg-stone-800/50 border border-stone-700">
+                    <i class="fa-regular fa-calendar text-amber-400"></i>
+                    <span>10 & 11 Avril 2027</span>
+                </div>
+                <div class="flex items-center gap-2 px-3 py-1 rounded-md bg-stone-800/50 border border-stone-700">
+                    <i class="fa-solid fa-location-dot text-red-400"></i>
+                    <span>Chinon (37)</span>
+                </div>
+                <div class="flex items-center gap-2 px-3 py-1 rounded-md bg-stone-800/50 border border-stone-700">
+                    <i class="fa-solid fa-user-group text-blue-400"></i>
+                    <span>40 Participants Max</span>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <div class="container">
-        <div class="intro">
-            <h2>Site Internet en Construction</h2>
-            <p>Le club d'échecs d'Avoine en association avec l'Auberge des Rois de Chinon vous propose un événement unique mêlant la passion du jeu et la découverte du terroir ligérien. Toutes les informations détaillées ainsi que les modalités d'inscription seront disponibles très prochainement.</p>
-        </div>
-
-        <div class="grid">
-            <div class="card">
-                <h3><i class="fas fa-chess-knight"></i> 1. Le challenge</h3>
-                <p>Le tournoi est homologué FIDE (rapide). Il se disputera en 9 rondes à la cadence de 15 minutes + 5 secondes par coup. Le nombre d'inscriptions est strictement limité à 40 participants maximum pour garantir la convivialité et la qualité de l'accueil.</p>
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+        
+        <!-- Status Banner -->
+        <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-xl shadow-sm mb-16 flex flex-col sm:flex-row gap-4 items-start">
+            <div class="p-2 rounded-lg bg-amber-100 text-amber-800 shrink-0">
+                <i class="fa-solid fa-compass-drafting text-xl animate-spin-[spin_3s_linear_infinite]"></i>
             </div>
-
-            <div class="card">
-                <h3><i class="fas fa-wine-glass-alt"></i> 2. Les échecs. Les vins.</h3>
-                <p>En parallèle du repas gastronomique du samedi soir (de 19h à minuit), un tournoi de dégustation à l'aveugle en 9 épreuves sera organisé. Les vins (blancs, rouges, rosés, pétillants) proviendront exclusivement de différents vignerons du Val de Loire.</p>
-            </div>
-
-            <div class="card">
-                <h3><i class="fas fa-map-marker-alt"></i> 3. Le lieu</h3>
-                <p>L'événement se déroulera dans le cadre historique et chaleureux de l'<strong>Auberge des Rois</strong> (Hôtel - Restaurant), situé au 10 Place Jeanne d'Arc, 37500 Chinon. Pour tout renseignement urgent, vous pouvez les contacter au 02 47 81 20 20.</p>
+            <div>
+                <h2 class="font-serif text-xl font-bold text-amber-900 mb-1">Site Internet en Construction</h2>
+                <p class="text-amber-800 text-sm leading-relaxed">
+                    Le club d'échecs d'Avoine, en étroite association avec l'Auberge des Rois de Chinon, prépare activement cet événement unique. Les modalités complètes d'inscription, le règlement intérieur et la liste des grands crus partenaires seront dévoilés très prochainement. Vos pions sont prêts ? Vos verres le seront bientôt.
+                </p>
             </div>
         </div>
 
-        <div class="poster-container">
-            <h2>Affiche officielle de l'événement</h2>
-            <img src="assets/affiche_echecs_et_vins.jpg" alt="Affiche Echecs & Vins du Val de Loire 2027" class="poster">
+        <!-- Pillars Grid -->
+        <div class="grid md:grid-cols-3 gap-8 mb-20">
+            
+            <!-- Pillar 1 -->
+            <div class="bg-white rounded-2xl p-8 border border-stone-200/60 shadow-sm hover:shadow-md transition-all group flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-stone-100 flex items-center justify-center text-stone-700 mb-6 group-hover:bg-stone-900 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-chess-knight text-xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-stone-950 mb-3">1. Le challenge</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                        Un tournoi de parties rapides homologué FIDE, orchestré en 9 rondes de haut vol. Cadence réglementaire : 15 minutes assorties d'un incrément de 5 secondes par coup. Une compétition sérieuse mais empreinte de courtoisie.
+                    </p>
+                </div>
+                <div class="text-xs font-semibold text-stone-400 mt-2 uppercase tracking-wider">Homologué FIDE</div>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="bg-white rounded-2xl p-8 border border-stone-200/60 shadow-sm hover:shadow-md transition-all group flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center text-red-700 mb-6 group-hover:bg-[#80182c] group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-wine-glass text-xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-stone-950 mb-3">2. Les échecs. Les vins.</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                        Parallèlement au dîner gastronomique du samedi soir (19h à minuit), vivez un tournoi de dégustation à l'aveugle en 9 épreuves thématiques. Blancs ciselés, rouges charnus, rosés tendres et fines bulles proviendront exclusivement de vignerons d'exception du Val de Loire.
+                    </p>
+                </div>
+                <div class="text-xs font-semibold text-red-600 mt-2 uppercase tracking-wider">Dégustation à l'aveugle</div>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="bg-white rounded-2xl p-8 border border-stone-200/60 shadow-sm hover:shadow-md transition-all group flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-700 mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-map-location-dot text-xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-stone-950 mb-3">3. Le lieu</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                        Les festivités prendront vie au cœur du patrimoine historique de Chinon, au sein de la prestigieuse <strong>Auberge des Rois</strong> (Hôtel - Restaurant), idéalement située au 10 Place Jeanne d'Arc. Un écrin de confort et de gastronomie.
+                    </p>
+                </div>
+                <div class="text-xs font-semibold text-amber-700 mt-2 flex items-center gap-1">
+                    <i class="fa-solid fa-phone text-[10px]"></i> 02 47 81 20 20
+                </div>
+            </div>
+
         </div>
-    </div>
 
-    <footer>
-        <p>&copy; 2026 Challenge Échecs & Vins du Val de Loire - Tous droits réservés.</p>
-    </footer>
+        <!-- Poster Section -->
+        <div class="bg-stone-900 rounded-3xl overflow-hidden shadow-xl border border-stone-800 grid md:grid-cols-2 items-center">
+            <div class="p-8 md:p-12 lg:p-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-amber-400 block mb-3">Communication</span>
+                <h3 class="font-serif text-3xl md:text-4xl font-bold text-white mb-4">Découvrez l'affiche officielle</h3>
+                <p class="text-stone-400 text-sm leading-relaxed mb-6">
+                    Imprégnée de l'esprit médiéval de la Forteresse Royale de Chinon et de la noblesse du jeu de Rois, l'affiche officielle symbolise l'alliance parfaite de nos deux passions. Vous pouvez d'ores et déjà la partager autour de vous.
+                </p>
+                <div class="text-stone-500 text-xs italic border-t border-stone-800 pt-4">
+                    Graphisme original réalisé pour l'édition 2027.
+                </div>
+            </div>
+            <div class="bg-stone-950 p-6 md:p-12 flex justify-center items-center border-t md:border-t-0 md:border-l border-stone-800">
+                <img src="assets/affiche_echecs_et_vins.jpg" alt="Affiche Officielle - Échecs & Vins du Val de Loire 2027" class="max-h-[500px] w-auto rounded-lg shadow-2xl transition-transform duration-500 hover:scale-105">
+            </div>
+        </div>
 
-</body>
-</html>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-950 text-stone-500 text-xs py-12 border-t border-stone-900">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+            <div>
+                <p class="font-serif text-stone-300 font-bold text-sm mb-1">Challenge Échecs & Vins du Val de Loire</p>
+                <p>© 2026 - Tous droits réservés. Organisation conjointe Club d'Avoine & Auberge des Rois.</p>
