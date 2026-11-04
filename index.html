@@ -12,61 +12,223 @@
 :root{--ink:#18232a;--wine:#762b32;--wine-dark:#4f1d23;--cream:#f5efe3;--paper:#fffdf8;--gold:#d4ad6a;--blue:#24485b;--muted:#6f746f;--line:rgba(24,35,42,.14);--radius:22px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--paper);font-family:Inter,system-ui,sans-serif;line-height:1.6}
 img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:none}sup{font-size:.5em;vertical-align:super}
-.container{width:min(1160px,calc(100% - 40px));margin:auto}h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;line-height:.98;margin:0}h1{font-size:clamp(3.2rem,6vw,5.5rem)}h2{font-size:clamp(2.6rem,4vw,3.4rem)}h3{font-size:2rem}
-header{position:absolute;inset:0 0 auto;z-index:3;color:#fff}nav{height:88px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff33}.brand{font:700 1.5rem "Cormorant Garamond",serif;letter-spacing:.02em}.brand-mark{font-size:1.4rem;margin-right:10px}.nav-links{display:flex;gap:28px;font-size:.84rem}.nav-links a{opacity:.88}.nav-cta{padding:11px 17px;border:1px solid #ffffff73;border-radius:99px}.menu-toggle{display:none;border:1px solid #ffffff73;border-radius:8px;background:transparent;color:#fff;width:44px;height:40px;padding:8px;cursor:pointer}.menu-toggle span{display:block;height:2px;background:#fff;margin:5px 0;border-radius:2px}.hero{min-height:760px;display:grid;place-items:center;position:relative;overflow:hidden;color:#fff;background:radial-gradient(circle at 78% 18%,#b58a4a 0%,transparent 28%),linear-gradient(115deg,#1d2c3f 0%,#4f1d23 50%,#24485b 100%)}
-.hero::before{content:"";position:absolute;inset:0;background-image:url("assets/tableau jean louis.jpg");background-size:cover;background-position:center;opacity:.18;filter:grayscale(.2)}.hero>.container{position:relative;z-index:1}.hero-topbar{position:absolute;top:150px;left:0;right:0;display:flex;justify-content:space-between;align-items:center;z-index:1}.hero-logos{display:flex;gap:18px;align-items:center}.hero-logos:first-child{margin-left:40px}.hero-logos:last-child{justify-content:flex-end;width:320px}.logo-pill{height:112px;min-width:160px;display:flex;align-items:center;justify-content:center}.logo-pill img{height:88px;width:auto;max-width:240px;object-fit:contain;filter:drop-shadow(0 5px 12px rgba(0,0,0,.47))}.hero-logos:first-child .logo-pill img{height:110px;max-width:320px}.hero-logos:last-child .logo-pill img{height:180px;max-width:360px}.hero-inner{position:relative;z-index:1;text-align:center;padding:130px 0 70px}.hero-content{max-width:940px;margin:auto;color:#f1d08e}.hero h1 span{color:#e0bd7d}.hero h1 .first-digit{font-size:1.35em;line-height:.7;display:inline-block}.organizer-lead{color:#fff;max-width:760px;margin:0 auto 18px}.hero-sub{max-width:700px;margin:22px auto 0;color:#fffdf7;font-size:1.05rem}.hero-meta,.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}.pill{border:1px solid rgba(255,255,255,.63);border-radius:99px;padding:9px 14px;font-size:.82rem}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:99px;font-weight:700}.btn-primary{background:var(--gold);color:#231d17}.btn-ghost{border:1px solid rgba(255,255,255,.52);color:#fff}.intro,.program,.partners,.register,.location{padding:110px 0}.intro{background:var(--cream)}.intro-grid,.location-grid,.register-box{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}.eyebrow{text-transform:uppercase;letter-spacing:.19em;font-size:.72rem;font-weight:700;color:var(--wine);margin-bottom:18px}.intro-copy{font-size:1.05rem;color:#4f5655}.intro-copy p{margin-top:0}.phase-list{display:grid;gap:18px;margin:28px 0}.phase{padding:20px 22px;border-left:4px solid var(--wine);background:#fffdf8}.phase strong{display:block;color:var(--wine);font:700 1.65rem "Cormorant Garamond",serif;margin-bottom:5px}.phase p{margin:0}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:45px}.timeline{border-top:1px solid var(--line)}.row{display:grid;grid-template-columns:170px 1fr auto;gap:28px;padding:25px 0;border-bottom:1px solid var(--line);align-items:center}.time{font-weight:700;color:var(--wine)}.badge{padding:7px 10px;border:1px solid var(--line);border-radius:99px;color:var(--muted);font-size:.75rem}.location{background:var(--blue);color:#fff}.location .eyebrow{color:#dfbd7c}.address{color:#ffffffc7}.map-card{height:330px;border:1px solid #ffffff26;border-radius:var(--radius);overflow:hidden;background:#dbe5e8;box-shadow:0 8px 24px rgba(0,0,0,.12)}.map-card iframe{display:block;width:100%;height:100%;border:0}.partners{background:var(--cream)}.partner-list{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.partner-card{min-height:150px;padding:28px 20px;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);display:flex;align-items:center;justify-content:center;gap:18px;text-align:center;box-shadow:0 8px 24px rgba(18,35,42,.02)}.partner-card strong{font:1.9rem "Cormorant Garamond",serif;color:var(--wine)}.partner-card strong a{color:inherit;text-decoration:none;transition:color .2s ease}.partner-card strong a:hover,.partner-card strong a:focus-visible{color:var(--blue);text-decoration:underline;text-underline-offset:4px}.partner-logo{width:82px;height:82px;object-fit:contain;flex:0 0 auto}.register{background:var(--wine-dark);color:#fff}.register .eyebrow{color:#dfbd7c}.register p{color:#ffffffd9;max-width:610px}.capacity{text-align:center;padding:28px;border:1px solid #ffffff29;border-radius:var(--radius)}.capacity strong{display:block;font:4rem "Cormorant Garamond",serif;color:#dfbd7c}.capacity span{display:block}footer{background:#151b1e;color:#ffffff9e;padding:30px 0;font-size:.8rem}.footer-inner{display:flex;justify-content:space-between;gap:20px}.footer-inner strong{color:#fff;font:1.3rem "Cormorant Garamond",serif}
-@media(max-width:880px){.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:78px;left:0;right:0;padding:12px;background:var(--wine-dark);border:1px solid #ffffff33;border-radius:0 0 16px 16px;box-shadow:0 10px 24px rgba(0,0,0,.15)}.nav-links.is-open{display:flex;flex-direction:column;gap:0}.nav-links a{display:block;padding:13px 16px;border-bottom:1px solid rgba(255,255,255,.1)}.nav-links a:last-child{border-bottom:0}.hero{min-height:720px}.hero-topbar{position:relative;top:auto;left:auto;right:auto;padding-top:120px}.hero-logos{gap:8px;justify-content:center}.hero-logos:first-child,.hero-logos:last-child{margin-left:0;width:auto}.hero-logos .logo-pill{height:74px;min-width:0}.hero-logos .logo-pill img{max-width:180px;height:auto}.hero-logos:first-child .logo-pill img{height:110px;max-width:320px}.hero-logos:last-child .logo-pill img{height:150px;max-width:290px}.hero-inner{padding-top:40px}.intro-grid,.location-grid,.register-box{grid-template-columns:1fr;gap:40px}.section-head{display:block}.row{grid-template-columns:1fr;gap:7px;padding:18px 0}.row .badge{justify-self:start}.partners .partner-list{grid-template-columns:1fr}.footer-inner{flex-direction:column}.footer-inner strong{font-size:1.15rem}}
-@media(max-width:640px){.container{width:min(100% - 28px,560px)}nav{height:78px}.brand{font-size:1.25rem}.hero{min-height:0;display:block;padding-bottom:45px}.hero-topbar{padding-top:95px}.hero-logos{flex-wrap:wrap}.hero h1{font-size:clamp(2.7rem,14vw,4.2rem)}.hero-sub{font-size:.95rem}.hero-meta,.actions{gap:8px}.btn{width:100%}.intro,.program,.partners,.register,.location{padding:75px 0}.register-box{gap:24px}.map-card{height:280px}.partner-card{min-height:125px}.footer-inner strong{font-size:1.15rem}}
+.container{width:min(1160px,calc(100% - 40px));margin:auto}h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;line-height:.98;margin:0}h1{font-size:clamp(3.2rem,6vw,5.5rem)}h2{font-size:clamp(2.6rem,4vw,3.5rem)}
+header{position:absolute;inset:0 0 auto;z-index:3;color:#fff}nav{height:88px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff33}.brand{font:700 1.5rem "Cormorant Garamond",serif;letter-spacing:.02em}.brand-mark{font-size:1.4rem;margin-right:10px}.nav-links{display:flex;gap:28px;font-size:.84rem}.nav-links a{opacity:.88}.nav-cta{padding:11px 17px;border:1px solid #ffffff33;border-radius:99px;background:transparent;color:#fff}.menu-toggle{display:none}
+.hero{min-height:760px;display:grid;place-items:center;position:relative;color:#fff;background:radial-gradient(circle at 75% 18%,rgba(181,138,84,.25),transparent 28%),linear-gradient(115deg,#1d2c35 0%,#4f1d23 55%,#24485b 100%)}.hero::before{content:"";position:absolute;inset:0;background-image:url("assets/tableau jean louis.jpg");background-size:cover;background-position:center;opacity:.18;filter:grayscale(.2)}.hero>.container{position:relative;z-index:1}.hero-topbar{padding-top:120px;display:flex;justify-content:space-between;align-items:center;gap:30px}.hero-logos{display:flex;flex-wrap:wrap;gap:18px;align-items:center}.logo-pill{display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:10px 14px}.logo-pill img{height:85px;width:auto;max-width:240px;object-fit:contain}.hero-inner{padding:70px 0 80px}.hero-content{max-width:940px;margin:auto;text-align:center}.organizer-lead{color:#fff;max-width:760px;margin:0 auto 18px;font-size:1.08rem}.hero h1 span{display:block}.hero h1 .first-digit{font-size:1.35em;line-height:.8;display:inline-block}.hero-sub{font-size:1.1rem;color:#f8f4ec;max-width:640px;margin:0 auto}.hero-meta{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:28px 0 18px}.pill{border:1px solid rgba(255,255,255,.38);border-radius:99px;padding:7px 12px;background:rgba(255,255,255,.08);font-size:.85rem}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:16px 22px;font-weight:700;transition:all .2s ease}.btn-primary{background:var(--gold);color:#1b120d;border:1px solid rgba(0,0,0,.12)}.btn-primary:hover{filter:brightness(1.02)}.btn-ghost{border:1px solid rgba(255,255,255,.45);background:transparent;color:#fff}.intro,.program,.partners,.register,.location{padding:110px 0}.intro-grid,.location-grid,.register-box{display:grid;grid-template-columns:1.2fr 1.8fr;gap:70px;align-items:start}.intro{background:var(--cream)}.eyebrow{text-transform:uppercase;letter-spacing:.19em;font-size:.72rem;font-weight:700;color:var(--wine);margin-bottom:18px}.intro-copy{font-size:1.05rem;color:#4f5655}.phase-list{display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:22px;margin-top:30px}.phase{padding:22px 20px;border-left:4px solid var(--wine);background:#fffdf8}.phase strong{display:block;color:var(--wine);font:700 1.65rem/1.1 "Cormorant Garamond",Georgia,serif;margin-bottom:5px}.phase p{margin:0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:45px}.timeline{border-top:1px solid var(--line)}.row{display:grid;grid-template-columns:170px 1fr auto;gap:20px;padding:25px 0;border-bottom:1px solid var(--line);align-items:center}.time{font-weight:700;color:var(--wine)}.row h3{font-size:1.8rem}.badge{padding:7px 10px;border-radius:99px;border:1px solid var(--line);color:var(--muted);font-size:.75rem}.partners{background:var(--cream)}.partner-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.partner-card{min-height:150px;padding:28px 20px;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(18,35,42,.02)}.partner-card strong{font:1.9rem/1.2 "Cormorant Garamond",Georgia,serif;color:var(--ink)}.partner-card a{color:inherit;text-decoration:none}.partner-card a:hover,.nav-links a:hover{color:var(--blue)}
+.register{background:var(--wine);color:#fff}.register .eyebrow{color:#dfbd7c}.register-box{grid-template-columns:1.6fr 1fr}.register-box .btn{max-width:260px}.register-box h2{margin-bottom:10px}.register-box ul{padding-left:20px;margin:10px 0 0}.register-box li{margin-bottom:6px}.register-box em{font-style:italic;color:#f2e0b5}.capacity{text-align:center;padding:28px;border:1px solid rgba(255,255,255,.24);border-radius:var(--radius);background:rgba(255,255,255,.04)}.capacity strong{display:block;font:700 4rem/1 "Cormorant Garamond",Georgia,serif}.capacity span{display:block}.location{background:var(--paper)}.location .eyebrow{color:#d8b96a}.address{color:#fff;line-height:1.7}.map-card{height:330px;border:1px solid rgba(255,255,255,.28);border-radius:var(--radius);overflow:hidden;background:#dbe5e8;box-shadow:0 8px 24px rgba(18,35,42,.12)}.map-card iframe{display:block;width:100%;height:100%;border:0}.footer{background:#151b1e;color:#fff;padding:30px 0;font-size:.82rem}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-inner strong{color:#fff;font:1.3rem "Cormorant Garamond",Georgia,serif}.@media(max-width:880px){.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:78px;left:0;right:0;padding:12px;background:var(--wine-dark);border:1px solid #ffffff33;border-radius:0 0 16px 16px;flex-direction:column}.nav-links.is-open{display:flex}.hero{min-height:0}.hero-topbar{padding-top:95px}.hero-logos{flex-wrap:wrap}.intro-grid,.location-grid,.register-box,.row,.partner-list,.footer-inner{grid-template-columns:1fr;display:block}.phase-list{grid-template-columns:1fr}.row{display:block;padding:18px 0}.row .badge{display:inline-block;margin-top:12px}.partner-card{min-height:120px}.footer-inner{display:flex;flex-direction:column}.}
+@media(max-width:640px){.container{width:min(100% - 28px,560px)}nav{height:78px}.brand{font-size:1.25rem}.hero{display:block;padding-bottom:45px}.hero-topbar{padding-top:95px}.hero-logos{gap:8px}.hero-sub{font-size:1rem}.intro,.program,.partners,.register,.location{padding:75px 0}.btn{width:100%}.actions{flex-direction:column}.}
 </style>
 </head>
 <body>
-<header><div class="container"><nav><a class="brand" href="#accueil"><span class="brand-mark">♟</span>Échecs &amp; Vins de Loire</a><button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navigation"><span></span><span></span><span></span></button><div class="nav-links" id="navigation"><a href="#challenge">Le challenge</a><a href="#programme">Programme</a><a href="#lieu">Le lieu</a><a href="#vignerons">Les vignerons</a><a class="nav-cta" href="#inscription">S’inscrire</a></div></nav></div></header>
-<main>
-<section class="hero" id="accueil"><div class="container"><div class="hero-topbar"><div class="hero-logos"><div class="logo-pill"><img src="assets/logo-club-avoine.png" alt="Logo Club d'échecs d'Avoine"></div></div><div class="hero-logos"><div class="logo-pill"><img src="assets/logo-auberge-rois.png" alt="Logo L'Auberge des Rois"></div></div></div><div class="hero-inner"><div class="hero-content"><p class="organizer-lead">Le club d’échecs d’Avoine, en association avec l’Auberge des Rois de Chinon, propose :</p><h1><span class="first-digit">1</span><sup>er</sup> Challenge<br><span>Échecs &amp; Vins</span><br>du Val de Loire</h1><p class="hero-sub">Un rendez-vous inoubliable à Chinon mêlant compétition, convivialité et dégustation des vins du Val de Loire.</p><div class="hero-meta"><span class="pill">10 &amp; 11 avril 2027</span><span class="pill">Chinon (37)</span></div><div class="actions"><a class="btn btn-primary" href="#inscription">S’inscrire</a><a class="btn btn-ghost" href="#programme">Découvrir le programme</a></div></div></div></div></section>
-<section class="intro" id="challenge"><div class="container intro-grid"><div><div class="eyebrow">L'esprit du rendez-vous</div><h2>Les échecs.<br>Les vins.</h2></div><div class="intro-copy"><p>Le challenge se déroule en deux phases distinctes, réunissant la compétition d’échecs et la découverte des vins du Val de Loire.</p><div class="phase-list"><div class="phase"><strong>Phase 1</strong><p>Tournoi rapide d’échecs en cadence rapide, avec 9 rondes au total et 15 minutes + 5 secondes par joueur.</p></div><div class="phase"><strong>Phase 2</strong><p>Tournoi de dégustation : 9 parties, organisé en parallèle du dîner, de 19h à minuit. Les vins blancs, rouges, rosés et pétillants sont exclusivement issus des différents terroirs du Val de Loire.</p></div></div></div></div></section>
-<section class="program" id="programme"><div class="container"><div class="section-head"><div><div class="eyebrow">À retenir</div><h2>Le programme</h2></div></div><div class="timeline"><div class="row"><div class="time">Samedi 10 avril<br>13h30</div><div><h3>Pointage des participants</h3><p>Accueil des participants et vérification des inscriptions.</p></div><span class="badge">Accueil</span></div><div class="row"><div class="time">Samedi 10 avril<br>14h30</div><div><h3>Lancement de la première ronde</h3><p>5 rondes sont jouées dans l’après-midi.</p></div><span class="badge">Échecs</span></div><div class="row"><div class="time">Samedi 10 avril<br>19h</div><div><h3>Début de la dégustation et du repas</h3><p>Les 9 épreuves du tournoi de dégustation se déroulent pendant le dîner.</p></div><span class="badge">Dégustation</span></div><div class="row"><div class="time">Dimanche 11 avril<br>Journée</div><div><h3>4 parties &amp; clôture</h3><p>Suite des rencontres et conclusion du tournoi.</p></div><span class="badge">Échecs</span></div></div></div></section>
-
-<section class="register inscription-details" aria-labelledby="inscription-title">
+<header>
   <div class="container">
-    <div class="register-box">
-      <div>
-        <div class="eyebrow">Inscription</div>
-        <h2 id="inscription-title">Tarif 1 : 169 €</h2>
-        <p>Le tarif comprend :</p>
-        <ul>
-          <li>L’inscription au tournoi d’échecs</li>
-          <li>L’inscription au tournoi de dégustation</li>
-          <li>Une nuit d’hôtel du samedi au dimanche</li>
-          <li>Le repas du samedi soir et le déjeuner du dimanche</li>
-          <li>Le petit-déjeuner</li>
-        </ul>
-        <h2>Tarif 2 : 199 € — avec accompagnateur</h2>
-        <p>Ce tarif comprend :</p>
-        <ul>
-          <li>Une nuit d’hôtel du samedi au dimanche en chambre double</li>
-          <li>Le petit-déjeuner</li>
-          <li>Les repas du samedi soir et du dimanche midi</li>
-        </ul>
-        <p><em>Ce tarif 2 ne comprend pas l’inscription au tournoi d’échecs ni au tournoi de dégustation.</em></p>
+    <nav>
+      <a class="brand" href="#accueil"><span class="brand-mark">♟</span>Échecs &amp; Vins de Loire</a>
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="navigation">
+        <a href="#challenge">Le challenge</a>
+        <a href="#programme">Programme</a>
+        <a href="#tarif">Tarif</a>
+        <a href="#lieu">Le lieu</a>
+        <a href="#vignerons">Les vignerons</a>
       </div>
-      <div>
-        <p>Attention, avant de vous inscrire et de cliquer sur le lien ci-dessous, il est impératif de répondre au quizz suivant.</p>
-        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeeVp-QyXci4K2TxhBV7Os1HyuV_fM7TSKIh6GrGsoJ12hTmg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Répondre au quizz</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero" id="accueil">
+    <div class="container">
+      <div class="hero-topbar">
+        <div class="hero-logos">
+          <div class="logo-pill"><img src="assets/logo-club-avoine.png" alt="Logo Club d'échecs d'Avoine"></div>
+          <div class="logo-pill"><img src="assets/logo-auberge-rois.png" alt="Logo L'Auberge des Rois"></div>
+        </div>
+      </div>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <p class="organizer-lead">Le club d'échecs d'Avoine, en association avec l’Auberge des Rois de Chinon, propose :</p>
+          <h1><span><span class="first-digit">1</span><sup>er</sup> Challenge</span><span>Échecs &amp; Vins</span><span>du Val de Loire</span></h1>
+          <p class="hero-sub">Un rendez-vous inoubliable à Chinon mêlant compétition, convivialité et dégustation des vins du Val de Loire.</p>
+          <div class="hero-meta">
+            <span class="pill">10 &amp; 11 avril 2027</span>
+            <span class="pill">Chinon (37)</span>
+          </div>
+          <div class="actions">
+            <a class="btn btn-primary" href="#tarif">Tarif</a>
+            <a class="btn btn-ghost" href="#programme">Découvrir le programme</a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="partners" id="vignerons"><div class="container"><div class="section-head"><div><div class="eyebrow">À la rencontre des terroirs</div><h2>Les Vignerons partenaires</h2></div><p>Découvrez les vignerons qui accompagneront le 1<sup>er</sup> Challenge Échecs &amp; Vins du Val de Loire.</p></div><div class="partner-list"><div class="partner-card"><img class="partner-logo" src="assets/AB.png" alt="Logo AB"><div><strong><a href="https://lechaidetheleme.com/" target="_blank" rel="noopener noreferrer">Thélème</a></strong></div></div><div class="partner-card"><img class="partner-logo" src="assets/AB.png" alt="Logo AB"><div><strong><a href="https://www.domainedelaberg erie.fr/" target="_blank" rel="noopener noreferrer">Domaine de la Bergerie</a></strong></div></div><div class="partner-card"><img class="partner-logo" src="assets/AB.png" alt="Logo AB"><div><strong><a href="https://www.louisdegrenelle.fr/" target="_blank" rel="noopener noreferrer">Louis de Grenelle</a></strong></div></div><div class="partner-card"><img class="partner-logo" src="assets/AB.png" alt="Logo AB"><div><strong>Domaine de Cocagne</strong></div></div></div></div></section>
-<section class="location" id="lieu"><div class="container location-grid"><div><div class="eyebrow">Rendez-vous à Chinon</div><h2>L'Auberge des Rois<br>Hôtel Restaurant</h2><p class="address">10 Place Jeanne d’Arc<br>37500 Chinon<br>Contact : +33 2 47 81 20 20</p><p>Un cadre chaleureux et historique pour partager des moments conviviaux entre échecs et terroirs de la Loire.</p></div><div class="map-card"><iframe src="https://www.google.com/maps?q=10+Place+Jeanne+d'Arc,+37500+Chinon,+France&amp;output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps de l'Auberge des Rois à Chinon"></iframe></div></div></section>
-<section class="register" id="inscription"><div class="container"><div class="register-box"><div><div class="eyebrow">Inscriptions</div><h2>Avant le 31 mars 2027.</h2><p>Pour cette première édition, le nombre de places est strictement limité afin de préserver une organisation exclusive et conviviale.</p><a class="btn btn-primary" href="mailto:contact@echecs-et-vins-de-loire.fr">Nous contacter</a></div><div class="capacity"><strong>40</strong><span>participants maximum</span></div></div></div></section>
+  <section class="intro" id="challenge">
+    <div class="container intro-grid">
+      <div>
+        <div class="eyebrow">L'esprit du rendez-vous</div>
+        <h2>Les échecs.<br>Les vins.</h2>
+      </div>
+      <div class="intro-copy">
+        <p>Le challenge se déroule en deux phases distinctes, réunissant la compétition d'échecs et la dégustation des vins du Val de Loire.</p>
+        <div class="phase-list">
+          <div class="phase">
+            <strong>Phase 1</strong>
+            <p>Tournoi rapide d'échecs en cadence rapide, avec 9 rondes au total et 15 minutes + 5 secondes par joueur.</p>
+          </div>
+          <div class="phase">
+            <strong>Phase 2</strong>
+            <p>Tournoi de dégustation : 9 participants, organisée en parallèle du dîner, de 19h à 23h.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="program" id="programme">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">À retenir</div>
+          <h2>Le programme</h2>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="row">
+          <div class="time">Samedi 10 avril<br>13h30</div>
+          <div>
+            <h3>Pointage des participants</h3>
+            <p>Accueil des participants et vérification des inscriptions.</p>
+          </div>
+          <span class="badge">Accueil</span>
+        </div>
+        <div class="row">
+          <div class="time">Samedi 10 avril<br>14h30</div>
+          <div>
+            <h3>Lancement de la première ronde</h3>
+            <p>5 rondes sont jouées dans l'après-midi.</p>
+          </div>
+          <span class="badge">Échecs</span>
+        </div>
+        <div class="row">
+          <div class="time">Samedi 10 avril<br>19h</div>
+          <div>
+            <h3>Dîner de la dégustation et du repas</h3>
+            <p>Les 9 épreuves du tournoi de dégustation se déroulent pendant le dîner.</p>
+          </div>
+          <span class="badge">Dégustation</span>
+        </div>
+        <div class="row">
+          <div class="time">Dimanche 11 avril<br>Journée</div>
+          <div>
+            <h3>4 parties &amp; clôture</h3>
+            <p>Suite des rencontres et conclusion du tournoi.</p>
+          </div>
+          <span class="badge">Échecs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="register inscription-details" id="tarif" aria-labelledby="tarif-title">
+    <div class="container">
+      <div class="register-box">
+        <div>
+          <div class="eyebrow">Tarif</div>
+          <h2 id="tarif-title">Tarif 1 : 169 €</h2>
+          <p>Le tarif comprend :</p>
+          <ul>
+            <li>L’inscription au tournoi d’échecs</li>
+            <li>L’inscription au tournoi de dégustation</li>
+            <li>Une nuit d’hôtel du samedi au dimanche</li>
+            <li>Le repas du samedi soir et le déjeuner du dimanche</li>
+            <li>Le petit-déjeuner</li>
+          </ul>
+          <h2>Tarif 2 : 199 € — avec accompagnateur</h2>
+          <p>Ce tarif comprend :</p>
+          <ul>
+            <li>Une nuit d’hôtel du samedi au dimanche en chambre double</li>
+            <li>Le petit-déjeuner</li>
+            <li>Les repas du samedi soir et du dimanche midi</li>
+          </ul>
+          <p><em>Ce tarif 2 ne comprend pas l’inscription au tournoi d’échecs ni au tournoi de dégustation.</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="register" id="inscription">
+    <div class="container">
+      <div class="register-box">
+        <div>
+          <div class="eyebrow">Inscriptions</div>
+          <h2>Avant le 31 mars 2027.</h2>
+          <p>Pour cette première édition, le nombre de places est strictement limité afin de préserver une organisation exclusive et conviviale.</p>
+        </div>
+        <div class="capacity">
+          <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeeVp-QyXci4K2TxhBV7Os1HyuV_fM7TSKIh6GrGsoJ12hTmg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Répondre au quizz</a>
+          <strong>40</strong>
+          <span>participants maximum</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="partners" id="vignerons">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">À la rencontre des terroirs</div>
+          <h2>Les Vignerons partenaires</h2>
+        </div>
+        <p>Découvrez les vignerons qui accompagnent le 1<sup>er</sup> Challenge Échecs &amp; Vins du Val de Loire.</p>
+      </div>
+      <div class="partner-list">
+        <div class="partner-card"><strong><a href="https://lechaidetheleme.com/" target="_blank" rel="noopener noreferrer">Le Château Theleme</a></strong></div>
+        <div class="partner-card"><strong><a href="https://www.domainedelabergeerie.fr/" target="_blank" rel="noopener noreferrer">Domaine de la Bergerie</a></strong></div>
+        <div class="partner-card"><strong><a href="https://www.louisdegrenelle.fr/" target="_blank" rel="noopener noreferrer">Louis de Grenelle</a></strong></div>
+        <div class="partner-card"><strong><a href="https://www.domainedecocagne.fr/" target="_blank" rel="noopener noreferrer">Domaine de Cocagne</a></strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="location" id="lieu">
+    <div class="container location-grid">
+      <div>
+        <div class="eyebrow">Rendez-vous à Chinon</div>
+        <h2>L'Auberge des Rois<br>Hôtel Restaurant</h2>
+        <p class="address">10 Place Jeanne d’Arc<br>37500 Chinon<br>Contact : +33 2 47 81 20 20</p>
+        <p>Un cadre chaleureux et historique pour partager des moments conviviaux entre échecs et terroirs de la Loire.</p>
+      </div>
+      <div class="map-card">
+        <iframe src="https://www.google.com/maps?q=10+Place+Jeanne+d'Arc,+37500+Chinon,+France&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps de l'Auberge des Rois à Chinon"></iframe>
+      </div>
+    </div>
+  </section>
 </main>
-<footer><div class="container footer-inner"><div><strong>Échecs &amp; Vins du Val de Loire</strong><br>1<sup>er</sup> Challenge · 10 &amp; 11 avril 2027 · Chinon</div><div>Site en construction — informations à venir</div></div></footer>
+<footer class="footer">
+  <div class="container footer-inner">
+    <div><strong>Échecs &amp; Vins du Val de Loire</strong><br>1<sup>er</sup> Challenge · 10 &amp; 11 avril 2027 · Chinon</div>
+    <div>Site en construction — informations à venir</div>
+  </div>
+</footer>
 <script>
 const menuToggle=document.querySelector('.menu-toggle');
 const navigation=document.querySelector('#navigation');
-menuToggle.addEventListener('click',()=>{const open=menuToggle.getAttribute('aria-expanded')==='true';menuToggle.setAttribute('aria-expanded',String(!open));menuToggle.setAttribute('aria-label',open?'Ouvrir le menu':'Fermer le menu');navigation.classList.toggle('is-open',!open)});
-navigation.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menuToggle.setAttribute('aria-expanded','false');menuToggle.setAttribute('aria-label','Ouvrir le menu');navigation.classList.remove('is-open')}));
+if (menuToggle && navigation) {
+  menuToggle.addEventListener('click',()=>{
+    const open=menuToggle.getAttribute('aria-expanded')==='true';
+    menuToggle.setAttribute('aria-expanded',String(!open));
+    menuToggle.setAttribute('aria-label',open?'Ouvrir le menu':'Fermer le menu');
+    navigation.classList.toggle('is-open',!open);
+  });
+  navigation.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+    menuToggle.setAttribute('aria-expanded','false');
+    menuToggle.setAttribute('aria-label','Ouvrir le menu');
+    navigation.classList.remove('is-open');
+  }));
+}
 </script>
 </body>
 </html>
